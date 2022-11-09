@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+@import "../../styles/media_breakpoints";
+
+.block {
+  display: flex;
+  position: relative;
+
+  svg {
+    opacity: 0;
+  }
+
+  .item {
+    padding: 10px 16px 10px 46px;
+    font-family: inherit;
+    max-width: 272px;
+    width: 100%;
+    color: $grey-3;
+    font-weight: 400;
+    font-size: 14px;
+    background: $grey-1;
+    background: $grey-1 url("../../public/icons/search.svg") 16px 50% no-repeat;
+    border-radius: 68px;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@include mobil {
+  .block {
+    svg {
+      margin-right: 10px;
+      position: absolute;
+      top: 50%;
+      right: -6px;
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+
+    .item {
+      position: relative;
+      opacity: 0;
+      width: 50%;
+      right: -50%;
+      transition: 0.3s all;
+
+      &:focus {
+        width: 100%;
+        right: 0;
+        opacity: 1;
+        z-index: 10;
+        outline: none;
+      }
+    }
+  }
+}

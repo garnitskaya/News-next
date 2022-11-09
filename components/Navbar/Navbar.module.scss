@@ -1,0 +1,209 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/media_breakpoints";
+
+.navbar {
+  background-color: $white;
+
+  .top {
+    border-bottom: 1px solid $grey-9;
+
+    .wrapper {
+      padding: 24px 0;
+      @include flexAl();
+      gap: 38px;
+      color: $main-black;
+    }
+
+    .topCities {
+      a {
+        width: 81px;
+        margin-right: 32px;
+      }
+    }
+
+    .border {
+      display: inline-block;
+      width: 1px;
+      height: 16px;
+      background: $grey-4;
+    }
+  }
+
+  .bottom {
+    height: 47px;
+    @include flex(space-between);
+    gap: 24px;
+
+    .list {
+      @include flexAl();
+
+      li {
+        &:not(:last-child) {
+          margin-right: 40px;
+        }
+
+        &:first-child {
+          @include flexAl();
+        }
+
+        .icon {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .bottomCities {
+      display: none;
+    }
+
+    a {
+      height: 100%;
+      padding: 10px 0;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.015em;
+      text-transform: uppercase;
+      color: $main-blue;
+
+      &.active {
+        color: $orange;
+      }
+    }
+
+    .block {
+      @include flexAl();
+    }
+
+    .dot {
+      position: relative;
+      margin-right: 12px;
+      width: 6px;
+      height: 6px;
+      background: $red;
+      border-radius: 50%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $red;
+        border-radius: 50%;
+        animation: pulse 1s infinite cubic-bezier(0.9, 0.7, 0.5, 0.9);
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(2);
+    opacity: 0.6;
+  }
+}
+
+@include laptop {
+  .navbar {
+    .top {
+      .wrapper {
+        gap: 20px;
+      }
+
+      .topCities {
+        a {
+          width: 50px;
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+}
+
+@include tablet-portrait {
+  .navbar {
+    .top {
+      .topCities {
+        a {
+          max-width: max-content;
+        }
+      }
+    }
+
+    .bottom {
+      .list {
+        li {
+          &:not(:last-child) {
+            margin-right: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .navbar {
+    .top {
+      .topCities {
+        display: none;
+      }
+    }
+
+    .bottom {
+      overflow: hidden;
+
+      .bottomCities {
+        position: relative;
+        padding: 0 24px;
+        display: flex;
+        gap: 24px;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 16px;
+          width: 1px;
+          background: $grey-3;
+        }
+
+        &::after {
+          left: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include mobil {
+  .navbar {
+    .top {
+      .navSocials {
+        display: none;
+      }
+
+      .wrapper {
+        padding: 14px 0;
+      }
+
+      .border {
+        display: none;
+      }
+    }
+
+    .bottom {
+      height: 44px;
+    }
+  }
+}

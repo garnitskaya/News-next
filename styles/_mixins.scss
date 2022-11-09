@@ -1,0 +1,16 @@
+@mixin flex($justifyContent: center, $alignItems: center) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+
+@mixin flexAl($alignItems: center) {
+  display: flex;
+  align-items: $alignItems;
+}
+
+@mixin flexD($gap, $fd: row) {
+  display: flex;
+  gap: $gap;
+  flex-direction: $fd;
+}

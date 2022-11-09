@@ -1,0 +1,126 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/media_breakpoints";
+
+.promo {
+  .block {
+    @include flexD(32px);
+
+    .item {
+      .date {
+        .label {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 140%;
+          text-transform: none;
+          color: $grey-8;
+        }
+
+        svg {
+          vertical-align: sub;
+          margin: 0 12px 0 16px;
+        }
+      }
+
+      .text {
+        margin-top: 10px;
+        max-width: 530px;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 130%;
+        color: $main-blue;
+      }
+    }
+  }
+
+  .date {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $grey-7;
+  }
+
+  .slides {
+    margin-top: 24px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .wrapSlide {
+      display: flex;
+      gap: 32px;
+      width: 100%;
+    }
+
+    .slide {
+      padding: 16px;
+      background: $grey-1;
+      border-radius: 8px;
+      flex: 1 0 304px;
+      cursor: pointer;
+
+      .slideText {
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        color: $main-blue;
+      }
+    }
+
+    .btnWrap {
+      position: absolute;
+      width: 165px;
+      height: 100%;
+      top: 0px;
+      right: 0;
+      background: linear-gradient(-90deg,
+          $white 34.24%,
+          rgba(217, 217, 217, 0) 105.15%,
+          rgba(255, 255, 255, 0) 105.15%);
+      background-clip: content-box;
+      z-index: 9;
+    }
+
+    .btn {
+      padding: 8px 6px 8px 8px;
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      right: 8px;
+      top: calc(50% - 48px / 2 + 0.5px);
+      background: $white;
+      box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.24);
+      border-radius: 88px;
+      border: none;
+      z-index: 100;
+      cursor: pointer;
+    }
+  }
+}
+
+@include tablet {
+  .promo {
+    .block {
+      flex-direction: column;
+      gap: 16px;
+
+      .image {
+        width: 100%;
+        height: 184px;
+        object-fit: cover;
+      }
+
+      .text {
+        font-size: 22px;
+      }
+    }
+
+    .slides {
+      .btnWrap {
+        display: none;
+      }
+    }
+  }
+}

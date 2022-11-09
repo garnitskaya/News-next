@@ -1,0 +1,25 @@
+@import './font/stylesheet.css';
+@import './mixins.scss';
+@import './variables.scss';
+
+html,
+body {
+  font-family: 'TT Severs';
+  background-color: $main-grey ;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}

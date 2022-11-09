@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+@import "../../styles/media_breakpoints";
+
+.socials {
+  display: flex;
+
+  li:not(:last-child) {
+    margin-right: 32px;
+  }
+
+  img {
+    vertical-align: bottom;
+  }
+
+  .name {
+    margin-left: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $socials-icon;
+  }
+}
+
+@include tablet-portrait {
+  .socials {
+    li:not(:last-child) {
+      margin-right: 12px;
+    }
+  }
+}

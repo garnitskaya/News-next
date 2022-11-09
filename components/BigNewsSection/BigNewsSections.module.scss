@@ -1,0 +1,64 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/media_breakpoints";
+
+.block {
+  padding: 32px 0 64px;
+
+  .flex {
+    @include flexD(32px);
+  }
+
+  .content {
+    flex: 1 1 976px;
+    @include flexD(24px, column);
+  }
+
+  .contentBlock {
+    padding: 24px 32px 32px;
+    background: $white;
+    border-radius: 12px;
+  }
+
+  .grid {
+    border-radius: 12px;
+    background: $white;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    gap: 40px 32px;
+
+    a:first-child {
+      grid-column: 1/3;
+    }
+  }
+}
+
+@include tablet-portrait {
+  .block {
+    & .flex {
+      flex-wrap: wrap;
+    }
+
+    .contentBlock {
+      .flex {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .block {
+    padding: 40px 0 0;
+
+    .contentBlock {
+      padding: 56px 24px;
+      margin: 0 -24px;
+      border-radius: 0;
+
+      .flex {
+        @include flexD(32px, column);
+      }
+    }
+  }
+}

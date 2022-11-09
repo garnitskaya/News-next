@@ -1,0 +1,75 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/media_breakpoints";
+
+.content {
+  flex: 1 1 304px;
+  @include flexD(0, column);
+  padding: 16px 16px 24px;
+  background: $white;
+  border-radius: 12px;
+  height: auto;
+
+  &.regions {
+    gap: 24px;
+  }
+
+  &.news {
+    gap: 32px;
+    height: max-content;
+  }
+
+  &.blog {
+    height: max-content;
+  }
+
+  .titleBlock {
+    @include flex(space-between);
+
+    .title {
+      font-weight: 600;
+      line-height: 140%;
+      font-size: 24px;
+      color: $main-black;
+    }
+  }
+}
+
+@include tablet-portrait {
+  .content {
+    &.blog {
+      background: none;
+      padding: 0;
+    }
+  }
+}
+
+@include tablet {
+  .content {
+    &.news {
+      padding: 40px 24px;
+      margin: 0 -24px;
+      border-radius: 0;
+    }
+
+    &.regions {
+      min-width: 312px;
+      gap: 20px;
+    }
+
+    &.blog {
+      background: none;
+      padding: 0;
+
+      button {
+        display: none;
+      }
+    }
+
+    .titleBlock {
+      .title {
+        font-size: 20px;
+      }
+    }
+  }
+}

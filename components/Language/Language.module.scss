@@ -1,0 +1,90 @@
+@import "../../styles/variables";
+@import "../../styles/media_breakpoints";
+
+.wrap {
+  .title {
+    padding: 5px 0;
+    display: none;
+  }
+
+  a,
+  .title {
+    text-transform: uppercase;
+    vertical-align: sub;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .content {
+    display: flex;
+
+    li:not(:last-child) {
+      margin-right: 18px;
+    }
+
+    .active {
+      color: $grey-3;
+    }
+  }
+}
+
+@include mobil {
+  .wrap {
+    min-width: 44px;
+    height: 20px;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      right: 0;
+      border: 6px solid transparent;
+      border-top: 6px solid $main-blue;
+      border-radius: 20%;
+    }
+
+    .title {
+      display: block;
+    }
+
+    .content {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      width: 100%;
+      flex-direction: column-reverse;
+      transition: $transition;
+      opacity: 0;
+
+      li {
+        width: 100%;
+        height: 20px;
+        max-height: 0;
+        transition: $transition;
+        overflow: hidden;
+        margin-right: 0;
+      }
+
+      .active {
+        color: $main-blue;
+      }
+    }
+
+    &.active {
+      &:before {
+        transform: rotate(180deg);
+        top: 0px;
+      }
+
+      .content li:first-child {
+        max-height: 20px;
+      }
+
+      .content {
+        opacity: 1;
+      }
+    }
+  }
+}

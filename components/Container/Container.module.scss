@@ -1,0 +1,14 @@
+@import "../../styles/media_breakpoints";
+
+.container {
+  max-width: 1330px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+@include laptop {
+  .container {
+    max-width: 100%;
+    padding: 0 24px;
+  }
+}

@@ -1,0 +1,76 @@
+@import "../../styles/variables";
+@import "../../styles/media_breakpoints";
+
+.btn {
+  padding: 9px 0 6px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: $main-blue;
+  text-align: center;
+  cursor: pointer;
+
+  &.next,
+  &.more {
+    background: url("../../public/icons/icon-in-circle.svg") 124px 50% no-repeat;
+
+    span {
+      float: left;
+    }
+  }
+
+  &.more {
+    background-position-x: 72px;
+  }
+
+  &.right {
+    color: $white;
+    background: url("../../public/icons/icon-in-circle-white.svg") 99% 50% no-repeat;
+
+    span {
+      margin: 0 48px 0 0;
+      float: left;
+    }
+  }
+
+  &.load {
+    border: 1px solid $grey-8;
+    border-radius: 4px;
+
+    span {
+      padding-left: 28px;
+      background: url("../../public/icons/load-more.svg") 0 50% no-repeat;
+    }
+  }
+
+  &.borderBlack {
+    border: 1px solid $grey-8;
+    border-radius: 4px;
+  }
+
+  &.borderWhite {
+    border: 1px solid $white;
+    border-radius: 4px;
+    color: $white;
+  }
+
+  &.orange,
+  &.blue {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  &.orange {
+    color: $orange;
+  }
+
+  &.blue {
+    color: $main-blue;
+    border-bottom: 1px solid $main-blue;
+  }
+
+  img {
+    margin-right: 8px;
+    vertical-align: sub;
+  }
+}

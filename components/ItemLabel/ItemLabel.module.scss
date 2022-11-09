@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.block {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  color: $grey-8;
+
+  .image {
+    margin-right: 12px;
+    vertical-align: sub;
+  }
+
+  &.importantBlock {
+    color: $orange;
+  }
+}

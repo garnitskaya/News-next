@@ -1,0 +1,11 @@
+.cities {
+  display: flex;
+  flex: 1;
+
+  a {
+    max-width: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

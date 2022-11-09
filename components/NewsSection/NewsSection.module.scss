@@ -1,0 +1,70 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/media_breakpoints";
+
+.news {
+  padding: 64px 0 32px;
+  overflow: hidden;
+
+  .flex {
+    @include flexD(32px);
+  }
+
+  .content {
+    flex: 1 1 976px;
+    @include flexD(56px, column);
+  }
+
+  .wrapContent {
+    width: 100%;
+    @include flexD(16px);
+
+    .wrapData {
+      flex: 1 1 auto;
+    }
+
+    .date {
+      margin-bottom: 12px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $orange-2;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@include tablet-portrait {
+  .news {
+    .flex {
+      flex-wrap: wrap;
+    }
+
+    .wrapContent {
+      margin-top: 24px;
+    }
+  }
+}
+
+@include tablet {
+  .news {
+    padding: 0;
+
+    .flex {
+      @include flexD(0, column);
+      flex-wrap: nowrap;
+    }
+
+    .content {
+      gap: 0px;
+
+      &>div {
+        margin: 40px 0 40px 0;
+      }
+    }
+
+    .wrapContent {
+      margin-top: 24px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/media_breakpoints";
+
+.block {
+  height: max-content;
+  max-width: 240px;
+  @include flexD(32px, column);
+
+  .title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $grey-6;
+  }
+}
+
+@include tablet {
+  .block {
+    max-width: 100%;
+
+    .title {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/media_breakpoints";
+
+.menu {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+
+  .wrapper {
+    @include flexAl();
+    padding: 8px 12px;
+    max-width: fit-content;
+    background: $grey-1;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    margin-right: 16px;
+
+    span {
+      display: block;
+      margin-bottom: 5px;
+      width: 18px;
+      height: 2px;
+      background-color: $main-black;
+      transition: all 0.2s;
+
+      &:last-child {
+        width: 13px;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .menu {
+    flex: 1 1;
+  }
+}
+
+@include mobil {
+  .menu {
+    font-size: 14px;
+    line-height: 17px;
+
+    .hamburger {
+      margin-right: 12px;
+
+      span {
+        margin-bottom: 4px;
+        width: 15px;
+
+        &:last-child {
+          width: 11px;
+        }
+      }
+    }
+  }
+}

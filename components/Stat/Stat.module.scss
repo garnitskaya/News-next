@@ -1,0 +1,83 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/media_breakpoints';
+
+.stat {
+  background: linear-gradient(90deg, #121B30 84.29%, rgba(18, 27, 48, 1) 100%);
+  position: relative;
+
+  .wrap {
+    overflow: hidden;
+  }
+
+  .info {
+    padding: 0 64px 0 0;
+    @include flexAl();
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(90deg, #121B30 84.29%, rgba(18, 27, 48, 0) 100%);
+
+    span {
+      vertical-align: text-top;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      color: $white;
+    }
+  }
+
+  .flex {
+    width: 100%;
+    padding: 6px 0 6px 95px;
+    @include flex(start);
+    gap: 40px;
+
+    .block {
+      @include flexAl;
+
+      .title {
+        width: max-content;
+        margin-left: 16px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: $main-grey;
+
+        span {
+          font-weight: 500;
+          margin-left: 5px;
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+
+@include tablet-portrait {
+  .stat {
+    .info {
+      padding: 0 24px 0 0;
+    }
+  }
+}
+
+@include mobil {
+  .stat {
+
+    .info span,
+    .flex .block .title {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    .flex {
+      padding: 6px 0 6px 88px;
+
+      .block {
+        img {
+          width: 18px;
+        }
+      }
+    }
+  }
+}
