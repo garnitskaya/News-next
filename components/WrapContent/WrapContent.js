@@ -30,7 +30,7 @@ const WrapContent = ({
       </div>
       {filter}
       {children}
-      {!(clazz == "blog" && clientWidth < 768) ?
+      {!(clazz == "blog" && clientWidth < 992) ?
         <Button type={type}>{childrenBtn}</Button> :
         null}
     </div>
