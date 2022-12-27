@@ -37,7 +37,7 @@ const Content = () => {
       return;
     } else {
       if (activeBlock === 4) {
-        setOffset((offset) => (offset -= 336));
+        setOffset((offset) => (offset += 336));
       }
       setActiveBlock(activeBlock - 1);
     }
@@ -49,7 +49,7 @@ const Content = () => {
       return;
     } else {
       if (activeBlock === 4) {
-        setOffset((offset) => (offset += 336));
+        setOffset((offset) => (offset -= 336));
       }
       setActiveBlock(activeBlock + 1);
     }

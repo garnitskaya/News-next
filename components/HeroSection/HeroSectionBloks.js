@@ -6,7 +6,7 @@ const HeroSectionBloks = ({ data, setActiveBlock, activeBlock, offset }) => {
     <div className={styles.blocks}>
       <div
         className={styles.wrapSlider}
-        style={{ transform: `translateX(${-offset}px)` }}
+        style={{ transform: `translateX(${offset}px)` }}
       >
         {data.map(({ id, title }) => (
           <div
